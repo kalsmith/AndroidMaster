@@ -11,14 +11,15 @@ import com.kal.androidmaster.R
 
 class TodoActivity : AppCompatActivity() {
 
+    private lateinit var rvCategories:RecyclerView
+    private lateinit var categoriesAdapter: CategoryAdapter
+
     private val categories = listOf(
         TaskCategory.Business,
         TaskCategory.Personal,
         TaskCategory.Other
     )
 
-    private lateinit var rvCategories:RecyclerView
-    private lateinit var categoriesAdapter: CategoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
