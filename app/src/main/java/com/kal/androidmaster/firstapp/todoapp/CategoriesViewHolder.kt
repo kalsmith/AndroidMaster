@@ -22,11 +22,17 @@ class CategoriesViewHolder(view:View) : RecyclerView.ViewHolder(view){
             }
             TaskCategory.Other -> {
                 tvCategoryName.text = "Otros"
-                ContextCompat.getColor(divider.context, R.color.todo_other_category)
+                divider.setBackgroundColor(
+                    ContextCompat.getColor(divider.context, R.color.todo_other_category)
+                )
+
             }
             TaskCategory.Personal -> {
                 tvCategoryName.text = "Personal"
-                ContextCompat.getColor(divider.context, R.color.todo_personal_category)
+                divider.setBackgroundColor(
+                    ContextCompat.getColor(divider.context, R.color.todo_personal_category)
+                )
+
 
             }
         }
