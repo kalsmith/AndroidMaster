@@ -3,11 +3,16 @@ package com.kal.androidmaster.firstapp.todoapp
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.kal.androidmaster.R
 import com.kal.androidmaster.firstapp.todoapp.TaskCategory.*
+import java.text.FieldPosition
 
 
 class TodoActivity : AppCompatActivity() {
@@ -48,6 +53,25 @@ class TodoActivity : AppCompatActivity() {
     private fun showDialog() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_task)
+
+        val btnAddTask:Button = dialog.findViewById(R.id.btnAddTask)
+        val etTask:EditText = dialog.findViewById(R.id.etTask)
+        val rgCategories:RadioGroup = dialog.findViewById(R.id.rgCategories)
+
+        btnAddTask.setOnClickListener{
+            val selectedId = rgCategories.checkedRadioButtonId
+            val selectedRadioButton:RadioButton = rgCategories.findViewById(selectedId)
+            val currentCategory: TaskCategory = when(selectedRadioButton.text){
+                getString(R.string.todo_dialog_category_business)->Business
+                getString(R.string.todo_dialog_category_personal)-> Personal
+                else -> Other
+            }
+            tasks.add(Task(etTask.text.toString(), currentCategory))
+            updateTask()
+            dialog.hide()
+        }
+
+
         dialog.show()
     }
 
@@ -62,8 +86,17 @@ class TodoActivity : AppCompatActivity() {
         rvCategories.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoriesAdapter
 
-        taskAdapter = TaskAdapter(tasks)
+        taskAdapter = TaskAdapter(tasks) {position -> onItemSelected(position)}
         rvTask.layoutManager = LinearLayoutManager(this)
         rvTask.adapter = taskAdapter
+    }
+
+    private fun onItemSelected(position: Int){
+        tasks[position].isSelected = !tasks[position].isSelected
+        updateTask()
+
+    }
+    private fun updateTask(){
+        taskAdapter.notifyDataSetChanged()
     }
 }
