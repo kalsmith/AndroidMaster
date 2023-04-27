@@ -27,6 +27,12 @@
     <string name="todo_title">Hola Cesar</string>
     <string name="todo_categories">Categorias</string>
     <string name="todo_task">Tareas</string>
+    <string name="todo_dialog_add_task">Escribe La Tarea</string>
+    <string name="todo_make_task">Crear Tarea</string>
+    <string name="todo_dialog_category_business">Negocios</string>
+    <string name="todo_dialog_category_other">Otros</string>
+    <string name="todo_dialog_category_personal">Personal</string>
+
 
 
 
