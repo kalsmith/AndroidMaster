@@ -21,7 +21,7 @@ class TodoActivity : AppCompatActivity() {
     private lateinit var categoriesAdapter: CategoryAdapter
 
     private lateinit var rvTask: RecyclerView
-    private lateinit var taskAdapter: TaskAdapter
+    private lateinit var tasksAdapter: TasksAdapter
 
     private lateinit var fabAddTask: FloatingActionButton
 
@@ -82,13 +82,13 @@ class TodoActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        categoriesAdapter = CategoryAdapter(categories)
+        categoriesAdapter = CategoryAdapter(categories){position -> updateCategories(position) }
         rvCategories.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoriesAdapter
 
-        taskAdapter = TaskAdapter(tasks) {position -> onItemSelected(position)}
+        tasksAdapter = TasksAdapter(tasks) {position -> onItemSelected(position)}
         rvTask.layoutManager = LinearLayoutManager(this)
-        rvTask.adapter = taskAdapter
+        rvTask.adapter = tasksAdapter
     }
 
     private fun onItemSelected(position: Int){
@@ -96,7 +96,17 @@ class TodoActivity : AppCompatActivity() {
         updateTask()
 
     }
+
+    private fun updateCategories(position: Int){
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+        updateTask()
+    }
+
     private fun updateTask(){
-        taskAdapter.notifyDataSetChanged()
+        val selectedCategories: List<TaskCategory> = categories.filter { it.isSelected }
+        val newTasks = tasks.filter {selectedCategories.contains(it.category)}
+        tasksAdapter.tasks = newTasks
+        tasksAdapter.notifyDataSetChanged()
     }
 }
