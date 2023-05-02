@@ -12,9 +12,12 @@
         android:theme="@style/Theme.AndroidMaster"
         tools:targetApi="31">
         <activity
-            android:name=".firstapp.todoapp.TodoActivity"
-            android:theme="@style/Theme.TODOApp"
+            android:name=".firstapp.hero.SuperHeroListActivity"
             android:exported="false" />
+        <activity
+            android:name=".firstapp.todoapp.TodoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TODOApp" />
         <activity
             android:name=".firstapp.imccalculator.ResultIMCActivity"
             android:exported="false" />
@@ -36,6 +39,9 @@
         <activity
             android:name=".firstapp.FirstActivity"
             android:exported="true" />
+
+
     </application>
+
 
 </manifest>
