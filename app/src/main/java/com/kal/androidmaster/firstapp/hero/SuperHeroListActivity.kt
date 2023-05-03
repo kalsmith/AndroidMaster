@@ -2,8 +2,14 @@ package com.kal.androidmaster.firstapp.hero
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import com.kal.androidmaster.databinding.ActivitySuperHeroListBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -34,7 +40,17 @@ class SuperHeroListActivity : AppCompatActivity() {
     }
 
     private fun searchByName(query: String) {
-
+        binding.progressBar.isVisible = true
+        CoroutineScope(Dispatchers.IO).launch {
+            val myResponse: Response<SuperHeroDataResponse> =
+                retrofit.create(ApiService::class.java).getSuperheroes(query)
+            if (myResponse.isSuccessful){
+                val response: SuperHeroDataResponse? = myResponse.body()
+                Log.i("Cesar ", "FUNKA")
+            }else{
+                Log.i("Cesar", "No FUNKA LA WEA")
+            }
+        }
     }
 
     private fun getRetrofit(): Retrofit{
@@ -43,9 +59,6 @@ class SuperHeroListActivity : AppCompatActivity() {
             .baseUrl("https://superheroapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
-
-
     }
 
 
