@@ -31,18 +31,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-2:22:00
+
             <TextView
                 android:id="@+id/tvSuperheroName"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="28sp"
-                android:textColor="@color/black"
+                android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textSize="28sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 tools:text="ASDASDDDASS"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+<!-- https://youtu.be/ndqIqh6joGA?list=PL8ie04dqq7_OcBYDpvHrcSFVoggLi3cm_&t=8789 -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
         </LinearLayout>
+
+
 
 </androidx.cardview.widget.CardView>
 
