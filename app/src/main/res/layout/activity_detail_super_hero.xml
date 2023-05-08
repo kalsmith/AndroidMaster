@@ -42,20 +42,162 @@
                 android:textColor="@color/black"
                 tools:text="ASDASDDDASS"/>
 
+            <TextView
+                android:id="@+id/tvSuperRealName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="10sp"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                tools:text="ASDASDDDASS"/>
+
+            <TextView
+                android:id="@+id/tvPublisher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="10sp"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                tools:text="ASDASDDDASS"/>
+
+
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="bottom"
                 android:layout_marginTop="24dp"
                 android:orientation="horizontal">
-<!-- https://youtu.be/ndqIqh6joGA?list=PL8ie04dqq7_OcBYDpvHrcSFVoggLi3cm_&t=8789 -->
+
+
                 <View
+                    android:id="@+id/viewIntelligence"
                     android:layout_width="0dp"
-                    android:layout_height="30dp"
+                    android:layout_height="0dp"
+                    android:background="@color/superhero_stat_intelligence"
+                    android:layout_weight="1"
                     android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                     />
+
+                <View
+                    android:id="@+id/viewStrength"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/superhero_stat_strength"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    />
+
+                <View
+                    android:id="@+id/viewSpeed"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/superhero_stat_speed"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/viewDurability"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/superhero_stat_durability"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/viewPower"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/superhero_stat_power"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/viewCombat"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/superhero_stat_combat"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                     />
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:text="Intelligence"
+                    android:textSize="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:text="Strength"
+                    android:textSize="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:text="Speed"
+                    android:textSize="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:text="Durability"
+                    android:textSize="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:text="Power"
+                    android:textSize="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:text="Combat"
+                    android:textSize="10dp"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+            
+            
         </LinearLayout>
 
 
