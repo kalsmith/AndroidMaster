@@ -34,4 +34,11 @@
     <string name="todo_dialog_category_personal">Personal</string>
 
 
+    <string name="settings_dark_mode">Modo Oscuro</string>
+    <string name="settings_sub_dark_mode">Activa el modo oscuro para un cambio visual</string>
+
+    <string name="settings_bluetooth">Bluetooth</string>
+    <string name="settings_sub_bluetooth">Activa o desactiva el Bluetooth</string>
+
+
 </resources>
