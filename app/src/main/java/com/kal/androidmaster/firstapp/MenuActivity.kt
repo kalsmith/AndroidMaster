@@ -8,6 +8,7 @@ import com.kal.androidmaster.R
 import com.kal.androidmaster.firstapp.hero.SuperHeroListActivity
 import com.kal.androidmaster.firstapp.imccalculator.ImcCalculatorActivity
 import com.kal.androidmaster.firstapp.todoapp.TodoActivity
+import settings.SettingsActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,12 +18,18 @@ class MenuActivity : AppCompatActivity() {
         val btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
         val btnTODO = findViewById<Button>(R.id.btnTODO)
         val btnSh = findViewById<Button>(R.id.btnSh)
+        val btnSettings = findViewById<Button>(R.id.btnSettings)
 
         btnSaludApp.setOnClickListener { navigateToSaludApp() }
         btnIMCApp.setOnClickListener { navigateToIMCApp() }
         btnTODO.setOnClickListener { navigateToTodoApp() }
         btnSh.setOnClickListener { navigateToSuperHeroList() }
+        btnSettings.setOnClickListener{ navigateToSettings()}
+    }
 
+    private fun navigateToSettings() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToSuperHeroList() {
