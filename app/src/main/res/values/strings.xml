@@ -40,5 +40,13 @@
     <string name="settings_bluetooth">Bluetooth</string>
     <string name="settings_sub_bluetooth">Activa o desactiva el Bluetooth</string>
 
+    <string name="settings_volume">Volumen</string>
+    <string name="settings_sub_volume">Aumenta o diminuye el volumen</string>
+
+    <string name="settings_vibration">Vibración</string>
+    <string name="settings_sub_vibration">Controle la Vibración del Dispositivo</string>
+
+
+
 
 </resources>
